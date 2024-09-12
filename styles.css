@@ -1,0 +1,252 @@
+:root {
+    background-color: white;
+}
+
+body {
+    /* Display & Box Model */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0;
+    height: 100vh;
+
+    /* Colour */
+    background-color: #3B4664;
+
+    /* Font */
+    font-family: "Heebo", sans-serif;
+}
+
+.outer-container {
+    /* Display & Box Model */
+    display: grid;
+    grid-template-rows: 1fr 1fr 4fr;
+    margin: 2vh 0 10vh 0;
+    width: 400px;
+}
+
+.calc-theme-container {
+    /* Display & Box Model */
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr;
+    align-items: end;
+    padding: 5px 0;
+
+    /* Colour */
+    color: white;
+} 
+
+.calc {
+    /* Display */
+    padding-left: 5px;
+
+    /* Text */
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.theme-text {
+    /* Display */
+    margin-bottom: 8px;
+
+    /* Text */
+    font-size: 12px;
+    font-weight: 800;
+}
+
+/* .theme-switch {
+    /* Position */ 
+    /* position: relative;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0; */
+
+    /* Display */
+    /*display: flex;
+    justify-content: center;
+    align-items: center; 
+} */
+
+.tabs {
+    /* Position */ 
+    position: relative;
+
+    /* Display */
+    display: flex;
+    border-radius: 99px;
+
+    /* Colour */
+    background-color: #252C45;
+}
+
+.tabs input {
+    display: none;
+}
+
+.tab {
+    /* Display */
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    border-radius: 99px;
+}
+
+.tabs .slider {
+    /* Position */
+    position: absolute;
+
+    /* Display */
+    height: 15px;
+    width: 15px;
+    border-radius: 99px;
+    align-self: center;
+    margin-left: 4px;
+
+    /* Colour */
+    background-color: #D23E33;
+}
+
+.tabs input:nth-child(1):checked ~ .slider {
+    left: 2px;
+}
+
+.tabs input:nth-child(3):checked ~ .slider {
+    left: 100px;
+}
+
+/* .switch-toggle {
+
+    display: flex;
+    flex-direction: row;
+
+    float: left;
+    background: #242729;
+ }
+ .switch-toggle input {
+   position: absolute;
+   opacity: 0;
+ }
+ .switch-toggle input + label {
+   padding: 7px;
+   float:left;
+   color: #fff;
+   cursor: pointer;
+ }
+ .switch-toggle input:checked + label {
+   background: green;
+ } */
+
+.total-container {
+    /* Display & Box Model */
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 3vh;
+    border-radius: 10px;
+    padding-right: 25px;
+    padding-top: 15px;
+    padding: 15px 25px 20px 0;
+
+    /* Colour */
+    background-color: #181F32;
+    color: white;
+
+    /* Text */
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.input-container {
+    /* Display & Box Model */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px 18px;
+    justify-items: center;
+    align-items: center;
+    margin-top: 3vh;
+    padding: 25px 25px;
+    border-radius: 10px;
+
+    /* Colour */
+    background-color: #252D44;
+    color: #444B5C;
+    
+}
+
+.button-a {
+    /* Display & Box Model */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    border-bottom: 4px solid #B6A399;
+
+    /* Colour */ 
+    background-color: #EAE3DB;
+
+    /* Text */
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.button-b {
+    /* Display & Box Model */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    border-bottom: 4px solid #424E73;
+
+    /* Colour */ 
+    background-color: #647299;
+    color: white;
+
+    /* Text */
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.button-c {
+    /* Display & Box Model */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1 / span 2;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    border-bottom: 4px solid #424E73;
+
+    /* Colour */ 
+    background-color: #647299;
+    color: white;
+
+    /* Text */
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.button-d {
+    /* Display & Box Model */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 3 / span 2;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    border-bottom: 4px solid #8F271C;
+
+    /* Colour */ 
+    background-color: #D13F30;
+    color: white;
+
+    /* Text */
+    font-size: 20px;
+    font-weight: 800;
+}
