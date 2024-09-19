@@ -1,46 +1,86 @@
-let numbers = ['','']
+let numbers = ['', '', '']
 let i = 0
 
+const inputContainer = document.querySelector('.input-container')
 
-function clicked7() {
-    numbers[i] += '7'
-    document.querySelector('.total-container').textContent = numbers[i]
-}
+inputContainer.addEventListener("click", (event) => {
+    if (event.target.tagName === 'DIV') {
+        if (numbers[i].length < 15) {
+            if (Number.isInteger(parseInt(event.target.textContent)  )) {
+                numbers[i] += event.target.textContent
+                document.querySelector('.total-container').textContent = numbers[i]
+            }
 
-function clicked8() {
-    numbers[i] += '8'
-    document.querySelector('.total-container').textContent = numbers[i]
-}
+            if (event.target.textContent === '.') {
+                if (!numbers[i].includes('.')) {
+                    numbers[i] += '.'
+                    document.querySelector('.total-container').textContent = numbers[i]
+                }
+            }
+        }
+        
+        if (['+', '-', '/', 'x'].includes(event.target.textContent)) {
+            numbers[2] = event.target.textContent
+            i = 1
+            document.querySelector('.total-container').textContent = event.target.textContent
+        }
 
-function clicked9() {
-    numbers[i] += '9'
-    document.querySelector('.total-container').textContent = numbers[i]
-}
+        if (event.target.textContent === 'DEL') {
+            console.log(i)
+            if (i === 1 && document.querySelector('.total-container').textContent === '0') {
+                numbers[0] = ''
+                i = 0
+            }
+            
+            if (i === 1 && parseFloat(numbers[1]) != 0) {
+                numbers[1] = ''
+                document.querySelector('.total-container').textContent = 0
 
-function del() {
-    numbers[i] = numbers[i].slice(0, numbers[i].length -1)
-    document.querySelector('.total-container').textContent = numbers[i]
-}
+            } 
 
-function clicked4() {
-    numbers[i] += '4'
-    document.querySelector('.total-container').textContent = numbers[i]
-}
+            if (i === 0) {
+                numbers[0] = ''
+                document.querySelector('.total-container').textContent = 0
+            }
+        }
 
-function clicked5() {
-    numbers[i] += '5'
-    document.querySelector('.total-container').textContent = numbers[i]
-}
+        if (event.target.textContent === 'RESET') {
+            i = 0
+            numbers = ['', '', '']
+            document.querySelector('.total-container').textContent = 0
+        }
 
-function clicked6() {
-    numbers[i] += '6'
-    document.querySelector('.total-container').textContent = numbers[i]
-}
+        if (event.target.textContent === '=') {
+            if (!numbers.includes('')) {
+                if (numbers[2] === '+') {
+                    numbers[0] = (parseFloat(numbers[0]) + parseFloat(numbers[1])).toString()
+                }
+    
+                if (numbers[2] === '-') {
+                    numbers[0] = (parseFloat(numbers[0]) - parseFloat(numbers[1])).toString()
+                }
+    
+                if (numbers[2] === '/') {
+                    numbers[0] = (parseFloat(numbers[0]) / parseFloat(numbers[1])).toString()
+                    if (numbers[0].length >= 15) {
+                        numbers[0] = numbers[0].slice(0, 15)
+                    }
+                }
+    
+                if (numbers[2] === 'x') {
+                    numbers[0] = (parseFloat(numbers[0]) * parseFloat(numbers[1])).toString()
+                }
+    
+                document.querySelector('.total-container').textContent = numbers[0]
+                
+                numbers[1] = ''
+                numbers[2] = ''
 
-document.querySelector('#button-7').addEventListener("click", clicked7)
-document.querySelector('#button-8').addEventListener("click", clicked8)
-document.querySelector('#button-9').addEventListener("click", clicked9)
-document.querySelector('#button-del').addEventListener("click", del)
-document.querySelector('#button-4').addEventListener("click", clicked4)
-document.querySelector('#button-5').addEventListener("click", clicked5)
-document.querySelector('#button-6').addEventListener("click", clicked6)
+                i = 0
+            }
+        }
+
+        console.log(numbers)
+    }
+})
+
