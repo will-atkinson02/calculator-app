@@ -54,10 +54,16 @@ inputContainer.addEventListener("click", (event) => {
             if (!numbers.includes('')) {
                 if (numbers[2] === '+') {
                     numbers[0] = (parseFloat(numbers[0]) + parseFloat(numbers[1])).toString()
+                    if (numbers[0].length >= 15) {
+                        numbers[0] = 'Error'
+                    }
                 }
     
                 if (numbers[2] === '-') {
                     numbers[0] = (parseFloat(numbers[0]) - parseFloat(numbers[1])).toString()
+                    if (numbers[0].length >= 15) {
+                        numbers[0] = 'Error'
+                    }
                 }
     
                 if (numbers[2] === '/') {
@@ -69,6 +75,9 @@ inputContainer.addEventListener("click", (event) => {
     
                 if (numbers[2] === 'x') {
                     numbers[0] = (parseFloat(numbers[0]) * parseFloat(numbers[1])).toString()
+                    if (numbers[0].length >= 15) {
+                        numbers[0] = 'Error'
+                    }
                 }
     
                 document.querySelector('.total-container').textContent = numbers[0]

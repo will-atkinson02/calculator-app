@@ -34,7 +34,7 @@ body {
 
     /* Colour */
     color: white;
-} 
+}
 
 .calc {
     /* Display */
@@ -52,6 +52,66 @@ body {
     /* Text */
     font-size: 12px;
     font-weight: 800;
+}
+
+.theme-numbers {
+    /* Display */
+    display: grid;
+    grid-template-columns: 21.3px 21.3px 21.3px;
+    justify-items: center;
+    margin-bottom: 0;
+}
+
+/* Base container for the theme slider */
+.theme-slider {
+    position: relative;
+    width: 65px;
+    height: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #252D44;
+    border-radius: 99px;
+    margin-bottom: 4px;
+}
+
+/* Hide the actual radio inputs */
+.theme-slider input[type="radio"] {
+    display: none;
+}
+
+/* Styling for the labels (1, 2, 3) */
+.theme-slider label {
+    color: #252D44;
+    /* color: white; */
+    font-size: 14px;
+    /* z-index: 1; */
+    cursor: pointer;
+}
+
+/* Base slider look */
+.slider {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 15px;
+    height: 15px;
+    background-color: #CD4035;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+/* Moving the slider when the different radio buttons are checked */
+#theme1:checked~.slider {
+    transform: translateX(0);
+}
+
+#theme2:checked~.slider {
+    transform: translateX(20px);
+}
+
+#theme3:checked~.slider {
+    transform: translateX(40px);
 }
 
 .total-container {
@@ -88,7 +148,7 @@ body {
     /* Colour */
     background-color: #252D44;
     color: #444B5C;
-    
+
 }
 
 .button-a {
@@ -101,7 +161,7 @@ body {
     height: 100%;
     border-bottom: 4px solid #B6A399;
 
-    /* Colour */ 
+    /* Colour */
     background-color: #EAE3DB;
 
     /* Text */
@@ -119,7 +179,7 @@ body {
     height: 100%;
     border-bottom: 4px solid #424E73;
 
-    /* Colour */ 
+    /* Colour */
     background-color: #647299;
     color: white;
 
@@ -139,7 +199,7 @@ body {
     height: 100%;
     border-bottom: 4px solid #424E73;
 
-    /* Colour */ 
+    /* Colour */
     background-color: #647299;
     color: white;
 
@@ -159,7 +219,7 @@ body {
     height: 100%;
     border-bottom: 4px solid #8F271C;
 
-    /* Colour */ 
+    /* Colour */
     background-color: #D13F30;
     color: white;
 

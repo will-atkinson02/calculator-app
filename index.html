@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,12 +11,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
-    <script  src="scripts.js" defer></script>
+    <script src="scripts.js" defer></script>
 </head>
+
 <body>
     <div class="outer-container">
         <div class="calc-theme-container">
             <div class="calc">calc</div>
+            <div class="theme-text">THEME</div>
+            <div>
+                <div class="theme-numbers theme-text">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                </div>
+                <div class="theme-slider">
+                    <input type="radio" name="theme" id="theme1" checked>
+                    <label for="theme1">1</label>
+                  
+                    <input type="radio" name="theme" id="theme2">
+                    <label for="theme2">2</label>
+                  
+                    <input type="radio" name="theme" id="theme3">
+                    <label for="theme3">3</label>
+                  
+                    <div class="slider"></div>
+                </div>
+            </div>
         </div>
         <div class="total-container">
             0
@@ -26,7 +48,7 @@
             <div id="button-9" class="button-a">9</div>
             <div id="button-del" class="button-b">DEL</div>
             <div id="button-4" class="button-a">4</div>
-            <div id="button-5" class="button-a">5</div> 
+            <div id="button-5" class="button-a">5</div>
             <div id="button-6" class="button-a">6</div>
             <div id="button-multiply" class="button-a">+</div>
             <div id="button-1" class="button-a">1</div>
@@ -42,4 +64,5 @@
         </span>
     </div>
 </body>
+
 </html>
