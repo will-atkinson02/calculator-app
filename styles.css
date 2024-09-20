@@ -85,7 +85,7 @@ body {
     color: #252D44;
     /* color: white; */
     font-size: 14px;
-    /* z-index: 1; */
+    opacity: 0;
     cursor: pointer;
 }
 
@@ -169,6 +169,18 @@ body {
     font-weight: 800;
 }
 
+.button-a:active {
+    /* Display & Box Model */
+    border-bottom: 4px solid rgb(183, 165, 154);
+
+    /* Colour */
+    background-color: rgb(201, 195, 187);
+}
+
+.button-a:hover {
+    cursor: pointer;
+}
+
 .button-b {
     /* Display & Box Model */
     display: flex;
@@ -186,6 +198,18 @@ body {
     /* Text */
     font-size: 18px;
     font-weight: 800;
+}
+
+.button-b:active {
+    /* Display & Box Model */
+    border-bottom: 4px solid #353f5c;
+
+    /* Colour */
+    background-color: #4e5976;
+}
+
+.button-b:hover {
+    cursor: pointer;
 }
 
 .button-c {
@@ -208,6 +232,18 @@ body {
     font-weight: 800;
 }
 
+.button-c:active {
+    /* Display & Box Model */
+    border-bottom: 4px solid #353f5c;
+
+    /* Colour */
+    background-color: #4e5976;
+}
+
+.button-c:hover {
+    cursor: pointer;
+}
+
 .button-d {
     /* Display & Box Model */
     display: flex;
@@ -226,4 +262,23 @@ body {
     /* Text */
     font-size: 20px;
     font-weight: 800;
+}
+
+.button-d:active {
+    /* Display & Box Model */
+    border-bottom: 4px solid #7c2218;
+
+    /* Colour */
+    background-color: #b53729;
+}
+
+.button-d:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+    .outer-container {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
 }
