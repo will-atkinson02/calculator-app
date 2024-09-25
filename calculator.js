@@ -19,7 +19,7 @@ inputContainer.addEventListener("click", (event) => {
             }
         }
         
-        if (['+', '-', '/', 'x'].includes(event.target.textContent)) {
+        if (['+', '-', '÷', '×'].includes(event.target.textContent)) {
             numbers[2] = event.target.textContent
             i = 1
             document.querySelector('.total-container').textContent = event.target.textContent
@@ -66,14 +66,14 @@ inputContainer.addEventListener("click", (event) => {
                     }
                 }
     
-                if (numbers[2] === '/') {
+                if (numbers[2] === '÷') {
                     numbers[0] = (parseFloat(numbers[0]) / parseFloat(numbers[1])).toString()
                     if (numbers[0].length >= 15) {
                         numbers[0] = numbers[0].slice(0, 15)
                     }
                 }
     
-                if (numbers[2] === 'x') {
+                if (numbers[2] === '×') {
                     numbers[0] = (parseFloat(numbers[0]) * parseFloat(numbers[1])).toString()
                     if (numbers[0].length >= 15) {
                         numbers[0] = 'Error'
@@ -88,8 +88,6 @@ inputContainer.addEventListener("click", (event) => {
                 i = 0
             }
         }
-
-        console.log(numbers)
     }
 })
 

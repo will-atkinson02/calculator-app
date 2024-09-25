@@ -1,5 +1,85 @@
 :root {
-    background-color: white;
+    --outer-background: #3B4664;
+    --main-text-colour: white;
+
+    --theme-slider-background: #252D44;
+    --theme-slider: #CD4035;
+
+    --total-display-background: #181F32;
+
+    --buttons-text-colour: #444B5C;
+
+    --button-a-shadow: #B6A399;
+    --button-a-background: #EAE3DB;
+    --button-a-active-shadow: rgb(183, 165, 154);
+    --button-a-active-background: rgb(201, 195, 187);
+
+    --button-b-c-shadow: #424E73;
+    --button-b-c-background: #647299;
+    --button-b-c-active-shadow: #353f5c;
+    --button-b-c-active-background: #4e5976;
+
+    --button-d-shadow: #8F271C;
+    --button-d-background: #D13F30;
+    --button-d-text: white;
+    --button-d-active-shadow: #7c2218;
+    --button-d-active-background: #b53729;
+
+}
+
+:root .theme-2 {
+    --outer-background: rgb(231,231,231);
+    --main-text-colour: #474541;
+
+    --theme-slider-background: #D3CDCA;
+    --theme-slider: #C95406;
+
+    --total-display-background: #EFEFEF;
+
+    --buttons-text-colour: #3C3B37;
+
+    --button-a-shadow: #ADA59F;
+    --button-a-background: #E6E5DE;
+    --button-a-active-shadow: #908a85;
+    --button-a-active-background: #cccbc4;
+
+    --button-b-c-shadow: #1D646A;
+    --button-b-c-background: #388287;
+    --button-b-c-active-shadow: #174e53;
+    --button-b-c-active-background: #2a6064;
+
+    --button-d-shadow: #8C4511;
+    --button-d-background: #C85401;
+    --button-d-active-shadow: #6f370e;
+    --button-d-active-background: #a14503;
+}
+
+:root .theme-3 {
+    --outer-background: #170629;
+    --main-text-colour: #F0DD6D;
+
+    --theme-slider-background: #1D0836;
+    --theme-slider: #01E2CE;
+
+    --total-display-background: #1D0836;
+
+    --buttons-text-colour: #FAE365;
+
+    --button-a-shadow: #6E2A87;
+    --button-a-background: #311B4E;
+    --button-a-active-shadow: #4e1e5f;
+    --button-a-active-background: #231337;
+
+    --button-b-c-shadow: #A025CF;
+    --button-b-c-background: #55087B;
+    --button-b-c-active-shadow: #711b93;
+    --button-b-c-active-background: #3c0656;
+
+    --button-d-shadow: #3CEEE0;
+    --button-d-background: #03aa9c;
+    --button-d-text: #461681;
+    --button-d-active-shadow: #32c8bb;
+    --button-d-active-background: #037067;
 }
 
 body {
@@ -11,7 +91,7 @@ body {
     height: 100vh;
 
     /* Colour */
-    background-color: #3B4664;
+    background-color: var(--outer-background);
 
     /* Font */
     font-family: "Heebo", sans-serif;
@@ -33,7 +113,7 @@ body {
     padding: 5px 0;
 
     /* Colour */
-    color: white;
+    color: var(--main-text-colour);
 }
 
 .calc {
@@ -57,7 +137,7 @@ body {
 .theme-numbers {
     /* Display */
     display: grid;
-    grid-template-columns: 21.3px 21.3px 21.3px;
+    grid-template-columns: 21.33px 21.33px 21.33px;
     justify-items: center;
     margin-bottom: 0;
 }
@@ -68,9 +148,9 @@ body {
     width: 65px;
     height: 25px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
-    background-color: #252D44;
+    background-color: var(--theme-slider-background);
     border-radius: 99px;
     margin-bottom: 4px;
 }
@@ -82,11 +162,13 @@ body {
 
 /* Styling for the labels (1, 2, 3) */
 .theme-slider label {
-    color: #252D44;
+    color: var(--theme-slider-background);
     /* color: white; */
     font-size: 14px;
     opacity: 0;
     cursor: pointer;
+
+    width: 30%;
 }
 
 /* Base slider look */
@@ -96,7 +178,7 @@ body {
     left: 5px;
     width: 15px;
     height: 15px;
-    background-color: #CD4035;
+    background-color: var(--theme-slider);
     border-radius: 50%;
     transition: transform 0.3s ease;
 }
@@ -125,8 +207,8 @@ body {
     padding: 15px 25px 20px 0;
 
     /* Colour */
-    background-color: #181F32;
-    color: white;
+    background-color: var(--total-display-background);
+    color: var(--main-text-colour);
 
     /* Text */
     font-size: 40px;
@@ -146,8 +228,8 @@ body {
     border-radius: 10px;
 
     /* Colour */
-    background-color: #252D44;
-    color: #444B5C;
+    background-color: var(--theme-slider-background);
+    color: var(--buttons-text-colour);
 
 }
 
@@ -159,10 +241,10 @@ body {
     border-radius: 10px;
     width: 100%;
     height: 100%;
-    border-bottom: 4px solid #B6A399;
+    border-bottom: 4px solid var(--button-a-shadow);
 
     /* Colour */
-    background-color: #EAE3DB;
+    background-color: var(--button-a-background);
 
     /* Text */
     font-size: 28px;
@@ -171,10 +253,10 @@ body {
 
 .button-a:active {
     /* Display & Box Model */
-    border-bottom: 4px solid rgb(183, 165, 154);
+    border-bottom: 4px solid var(--button-a-active-shadow);
 
     /* Colour */
-    background-color: rgb(201, 195, 187);
+    background-color: var(--button-a-active-background);
 }
 
 .button-a:hover {
@@ -189,10 +271,10 @@ body {
     border-radius: 10px;
     width: 100%;
     height: 100%;
-    border-bottom: 4px solid #424E73;
+    border-bottom: 4px solid var(--button-b-c-shadow);
 
     /* Colour */
-    background-color: #647299;
+    background-color: var(--button-b-c-background);
     color: white;
 
     /* Text */
@@ -202,10 +284,10 @@ body {
 
 .button-b:active {
     /* Display & Box Model */
-    border-bottom: 4px solid #353f5c;
+    border-bottom: 4px solid var(--button-b-c-active-shadow);
 
     /* Colour */
-    background-color: #4e5976;
+    background-color: var(--button-b-c-active-background);
 }
 
 .button-b:hover {
@@ -221,10 +303,10 @@ body {
     border-radius: 10px;
     width: 100%;
     height: 100%;
-    border-bottom: 4px solid #424E73;
+    border-bottom: 4px solid var(--button-b-c-shadow);
 
     /* Colour */
-    background-color: #647299;
+    background-color: var(--button-b-c-background);
     color: white;
 
     /* Text */
@@ -234,10 +316,10 @@ body {
 
 .button-c:active {
     /* Display & Box Model */
-    border-bottom: 4px solid #353f5c;
+    border-bottom: 4px solid var(--button-b-c-active-shadow);
 
     /* Colour */
-    background-color: #4e5976;
+    background-color: var(--button-b-c-active-background);
 }
 
 .button-c:hover {
@@ -253,11 +335,11 @@ body {
     border-radius: 10px;
     width: 100%;
     height: 100%;
-    border-bottom: 4px solid #8F271C;
+    border-bottom: 4px solid var(--button-d-shadow);
 
     /* Colour */
-    background-color: #D13F30;
-    color: white;
+    background-color: var(--button-d-background);
+    color: var(--button-d-text);
 
     /* Text */
     font-size: 20px;
@@ -266,10 +348,10 @@ body {
 
 .button-d:active {
     /* Display & Box Model */
-    border-bottom: 4px solid #7c2218;
+    border-bottom: 4px solid var(--button-d-active-shadow);
 
     /* Colour */
-    background-color: #b53729;
+    background-color: var(--button-d-active-background);
 }
 
 .button-d:hover {
